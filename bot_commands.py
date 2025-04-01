@@ -304,7 +304,7 @@ def register_commands(bot: commands.Bot):
             )
             embed.add_field(
                 name="Status Updates",
-                value="Will be posted in this channel",
+                value="[Click to join server](https://policeroleplay.community/join/NHB)",
                 inline=False
             )
             embed.set_footer(text=f"Initiated by {interaction.user.display_name}")

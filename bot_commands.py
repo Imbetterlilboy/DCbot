@@ -303,11 +303,12 @@ def register_commands(bot: commands.Bot):
                 color=0x00FF00  # Green color
             )
             embed.add_field(
-                name="Status Updates",
-                value="Will be posted in this channel",
+                name="Join Code",
+                value="[Click here to join](https://policeroleplay.community/join/NHB)",
                 inline=False
             )
-            embed.set_footer(text=f"Initiated by {interaction.user.display_name}")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1152710810590773280/1353540671994204170/Gaming_Logo_3.png?ex=67ed3b3b&is=67ebe9bb&hm=f236dc04477614c835b5fca1ca41e7a40362bfabd56993c7017176df934ffd21&")  # Optional logo
+    embed.set_footer(text="See you in-game!")
             
             message_content = role.mention if role else ""
             await channel.send(content=message_content, embed=embed)

@@ -14,8 +14,8 @@ load_dotenv()
 ALLOWED_ROLE_IDS = {1320949785515003935, 1333154842595561542, 1354241093193044128}
 ERLC_SERVER_KEY = os.getenv('ERLC_SERVER_KEY')
 ERLC_API_URL = "https://api.policeroleplay.community/v1/server/command"
-AUTO_ROLE_ID = 1234567890  # Replace with your role ID
-MOD_LOG_CHANNEL = 1234567890  # Replace with your channel ID
+AUTO_ROLE_ID = 1332922436387078234  # Replace with your role ID
+MOD_LOG_CHANNEL = 1354947504822812862  # Replace with your channel ID
 
 def is_allowed():
     async def predicate(interaction: discord.Interaction):

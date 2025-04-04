@@ -181,10 +181,13 @@ def register_commands(bot: commands.Bot):
     async def ship(interaction: discord.Interaction, user1: discord.Member, user2: discord.Member):
         score = random.randint(0, 100)
         if score >= 50:
-            message = f"💖 **MATCH!** {user1.mention} and {user2.mention} are {score}% compatible! 💘"
+            message = f"💖 Maybe?** {user1.mention} and {user2.mention} are {score}% Mayvbe compatible! 💘"
         else:
             message = f"💔 **NO MATCH...** {user1.mention} and {user2.mention} are only {score}% compatible. 😢"
         await interaction.response.send_message(message)
+        
+        if score <=75:
+            message = f"💖 **MATCH!** {user1.mention} and {user2.mention} are {score}% compatible! 💘"
 
     @bot.tree.command(name="erlc", description="Execute ER:LC in-game command")
     @app_commands.describe(command="The command to execute (include ':')")
@@ -394,4 +397,17 @@ def register_commands(bot: commands.Bot):
                 ephemeral=True
             )
 
+    bot.tree.command(name="rizzcalculator", description="The rizz calculator is to see if you have no rizz")
+    app_commands.describe (user1="First person")
+    async def rizzcalculator(interaction: discord.Interaction, user1: discord.Member):
+        score = random.randint(0, 100)
+        if score <= 75:
+            message= "YOU GOT MAJOR SKIBIDI RIZZ😍. ALL THEM GIRLS WANT YOU."
+        if score <= 50:
+            message= "You have mediocre rizz. Some girls want you."
+        if score >= 50:
+            message= "No Rizz, No girls.:("
+        if score >= 25:
+            message= "ITS CRAZY HOW YOU HAVE NO RIZZ AT ALL..."
+    
     print(f"Registered {len(bot.tree.get_commands())} commands")

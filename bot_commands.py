@@ -182,12 +182,11 @@ def register_commands(bot: commands.Bot):
         score = random.randint(0, 100)
         if score >= 50:
             message = f"💖 Maybe?** {user1.mention} and {user2.mention} are {score}% Mayvbe compatible! 💘"
-        else:
+        if score <= 50:
             message = f"💔 **NO MATCH...** {user1.mention} and {user2.mention} are only {score}% compatible. 😢"
-        await interaction.response.send_message(message)
-        
-        if score <=75:
+        if score >=75:
             message = f"💖 **MATCH!** {user1.mention} and {user2.mention} are {score}% compatible! 💘"
+            await interaction.response.send_message(message)
 
     @bot.tree.command(name="erlc", description="Execute ER:LC in-game command")
     @app_commands.describe(command="The command to execute (include ':')")

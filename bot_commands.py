@@ -176,15 +176,16 @@ def register_commands(bot: commands.Bot):
         except Exception as e:
             await interaction.response.send_message(f"❌ Failed to send message: {str(e)}", ephemeral=True)
 
-    @bot.tree.command(name="ship", description="Calculate love compatibility")
-    @app_commands.describe(user1="First person", user2="Second person")
     async def ship(interaction: discord.Interaction, user1: discord.Member, user2: discord.Member):
+        # Generate random compatibility (51-100% for positive, 0-49% for negative)
         score = random.randint(0, 100)
+        
         if score >= 50:
-            message = f"💔 **NO MATCH...** {user1.mention} and {user2.mention} are only {score}% compatible. 😢"
-        else than
             message = f"💖 **MATCH!** {user1.mention} and {user2.mention} are {score}% compatible! 💘"
-            await interaction.response.send_message(message)
+        else:
+            message = f"💔 **NO MATCH...** {user1.mention} and {user2.mention} are only {score}% compatible. 😢"
+        
+        await interaction.response.send_message(message)
 
     @bot.tree.command(name="erlc", description="Execute ER:LC in-game command")
     @app_commands.describe(command="The command to execute (include ':')")
@@ -406,5 +407,7 @@ def register_commands(bot: commands.Bot):
             message= "No Rizz, No girls.:("
         if score >= 25:
             message= "ITS CRAZY HOW YOU HAVE NO RIZZ AT ALL..."
+
+            await interaction.response.send_message(message)
     
     print(f"Registered {len(bot.tree.get_commands())} commands")

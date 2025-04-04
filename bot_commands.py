@@ -181,10 +181,8 @@ def register_commands(bot: commands.Bot):
     async def ship(interaction: discord.Interaction, user1: discord.Member, user2: discord.Member):
         score = random.randint(0, 100)
         if score >= 50:
-            message = f"💖 Maybe?** {user1.mention} and {user2.mention} are {score}% Mayvbe compatible! 💘"
-        if score <= 50:
             message = f"💔 **NO MATCH...** {user1.mention} and {user2.mention} are only {score}% compatible. 😢"
-        if score >=75:
+        else than
             message = f"💖 **MATCH!** {user1.mention} and {user2.mention} are {score}% compatible! 💘"
             await interaction.response.send_message(message)
 
